@@ -23,10 +23,12 @@ import Analytics from '../components/Analytics.jsx'
 import Collection from '../components/Collection.jsx'
 import MovieSearch from '../components/MovieSearch.jsx'
 
-export var routes = (
+var routes = (
   <Route name="home" path="/" handler={Main}>
     <Route name="movies" path="/movies" handler={MovieSearch} />
     <Route name="collection" path="/collection" handler={Collection} />
     <Route name="analytics" path="/analytics" handler={Analytics} />
   </Route>
 )
+
+export default routes
