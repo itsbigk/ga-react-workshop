@@ -19,8 +19,8 @@
 // module.exports = Actions
 
 // ES6
-import Constants from '../constants/constants'
-import Dispatcher from '../dispatchers/dispatcher'
+import Constants from '../constants/constants.jsx'
+import Dispatcher from '../dispatchers/dispatcher.jsx'
 
 let Actions = {
   addMovie: (movie) => {
@@ -28,10 +28,22 @@ let Actions = {
       actionType: Constants.ADD_MOVIE,
       movie: movie
     })
-  }
+  },
+  removeMovie: (movie) => {
+    Dispatcher.handleViewAction({
+      actionType: Constants.REMOVE_MOVIE,
+      index: index
+    })
+  },
   setCurrentMovie: (movie) => {
     Dispatcher.handleViewAction({
       actionType: Constants.SHOW_MOVIE,
+      movie: movie
+    })
+  },
+  addToAnalytics: (movie) => {
+    Dispatcher.handleViewAction({
+      actionType: Constants.ADD_TO_ANALYTICS,
       movie: movie
     })
   }

@@ -30,12 +30,14 @@
 // module.exports = Search
 
 import React from 'react'
+import Actions from '../actions/actions.jsx'
 
 class Search extends React.Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this._handleClick = this._handleClick.bind(this)
   }
+
   _handleClick() {
     var baseURI = 'http://www.omdbapi.com/?t='
     var movieInput = this.refs.movieTitle.getDOMNode().value
