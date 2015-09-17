@@ -11,7 +11,7 @@
 // module.exports = Analytics
 
 import React from 'react'
-import Highcharts from 'react-highcharts'
+import Highcharts from 'react-highcharts/more'
 
 import Store from '../stores/store.jsx'
 
@@ -39,7 +39,7 @@ class Analytics extends React.Component {
     }
 
     return (
-      <Highcharts config={config}></Highcharts>
+      <Highcharts config={config} />
     )
   }
 }

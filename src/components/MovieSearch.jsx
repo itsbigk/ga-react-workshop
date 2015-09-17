@@ -21,31 +21,33 @@ import Store from '../stores/store.jsx'
 import Search from './Search.jsx'
 import MovieDetails from './MovieDetails.jsx'
 
-function getMovie() {
-  return {
-    movie: Store.getMovie()
-  }
-}
+// function getMovie() {
+//   console.log('get movie')
+//   return {
+//     movie: Store.getMovie()
+//   }
+// }
 
 class MovieSearch extends React.Component {
   constructor() {
     super()
-    this.onChange = this.onChange.bind(this)
-    this.state = getMovie()
+    console.log('listening for event')
+    this._handleChange = this._handleChange.bind(this)
+    this.state = Store.getMovie()
   }
 
-  componentWillMount() {
-    console.log('listening for event')
-    Store.addChangeListener(this._onChange)
+  componentDidMount() {
+    console.log(this._handleChange)
+    Store.addChangeListener(this._handleChange)
   }
 
   componentWillUnmount() {
-    Store.removeChangeListener(this._onChange)
+    Store.removeChangeListener(this._handleChange)
   }
 
-  onchange() {
+  _handleChange() {
     console.log('an event was emitted, updating the state')
-    this.setState(getMovie())
+    this.setState(Store.getMovie())
   }
 
   render() {

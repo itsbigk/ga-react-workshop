@@ -46,8 +46,7 @@
 // module.exports = Store
 
 import Constants from '../constants/constants.jsx'
-import Dispatcher from '../dispatchers/dispatcher.jsx'
-import assign from 'react/lib/Object.assign'
+import AppDispatcher from '../dispatchers/dispatcher.jsx'
 import EventEmitter from 'events'
 
 var movies = []
@@ -75,33 +74,36 @@ function addToAnalyticsCollection(movie) {
   analyticsCollection.push(movieData)
 }
 
-var Store = assign(EventEmitter.prototype, {
-  emitChange: () => {
+class Store extends EventEmitter {
+  constructor() {
+    super()
+  }
+  emitChange() {
     this.emit('change')
-  },
+  }
 
-  addChangeListener: (callback) => {
+  addChangeListener(callback) {
     this.on('change', callback)
-  },
+  }
 
-  removeChangeListener: (callback) => {
+  removeChangeListener(callback) {
     this.removeListener('change', callback)
-  },
+  }
 
-  getMovie: () => {
+  getMovie() {
     return currentMovie
-  },
+  }
 
-  getCollection: () => {
+  getCollection() {
     return movies
-  },
+  }
 
-  getAnalyticsCollection: () => {
+  getAnalyticsCollection()  {
     return analyticsCollection
   }
-})
+}
 
-Dispatcher.register((payload) => {
+Store.dispatchToken = AppDispatcher.register((payload) => {
   var action = payload.action
 
   switch(action.actionType) {

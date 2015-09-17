@@ -20,29 +20,33 @@
 
 // ES6
 import Constants from '../constants/constants.jsx'
-import Dispatcher from '../dispatchers/dispatcher.jsx'
+import AppDispatcher from '../dispatchers/dispatcher.jsx'
 
 let Actions = {
   addMovie: (movie) => {
-    Dispatcher.handleViewAction({
+    console.log('in action add movie')
+    AppDispatcher.handleViewAction({
       actionType: Constants.ADD_MOVIE,
       movie: movie
     })
   },
   removeMovie: (movie) => {
-    Dispatcher.handleViewAction({
+    console.log('in action remove movie')
+    AppDispatcher.handleViewAction({
       actionType: Constants.REMOVE_MOVIE,
       index: index
     })
   },
   setCurrentMovie: (movie) => {
-    Dispatcher.handleViewAction({
+    console.log('in action setCurrentMovie')
+    AppDispatcher.handleViewAction({
       actionType: Constants.SHOW_MOVIE,
       movie: movie
     })
   },
   addToAnalytics: (movie) => {
-    Dispatcher.handleViewAction({
+    console.log('in action analytics add')
+    AppDispatcher.handleViewAction({
       actionType: Constants.ADD_TO_ANALYTICS,
       movie: movie
     })
