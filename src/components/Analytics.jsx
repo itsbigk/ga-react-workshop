@@ -11,13 +11,20 @@
 // module.exports = Analytics
 
 import React from 'react'
-import Highcharts from 'react-highcharts/more'
+import { Highcharts } from 'react-highcharts'
 
 import Store from '../stores/store.jsx'
 
 class Analytics extends React.Component {
+  constructor() {
+    super()
+    
+    this.state = {
+      movies: Store.getAnalyticsCollection()
+    }
+  }
+
   render() {
-    var movies = Store.getAnalyticsCollection()
 
     var config = {
       title: {

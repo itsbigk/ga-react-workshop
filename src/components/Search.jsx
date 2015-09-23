@@ -59,7 +59,7 @@ class Search extends React.Component {
       <div>
         <label>Movie:</label>
         <input type="text" className="form-control" ref="movieTitle" />
-        <button type="button" className="btn btn-default" onclick={this._handleClick}>Submit</button>
+        <button type="button" className="btn btn-default" onClick={this._handleClick}>Submit</button>
       </div>
     )
   }

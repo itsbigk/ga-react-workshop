@@ -1,12 +1,12 @@
 import React from 'react'
 
-import Actions from '../actions/actions.jsx'
+import Actions from '../actions/actions'
 
 class Add extends React.Component {
   constructor(props) {
     super(props)
+
     this._handleClick = this._handleClick.bind(this)
-    var movie = this.props.movie
   }
 
   _handleClick(movie) {
@@ -15,7 +15,7 @@ class Add extends React.Component {
 
   render () {
     return (
-      <button className="btn btn-default" onClick={this._handleClick}>Add to collection</button>
+      <button className="btn btn-default" onClick={this._handleClick(this.props.movie)}>Add to collection</button>
     )
   }
 }

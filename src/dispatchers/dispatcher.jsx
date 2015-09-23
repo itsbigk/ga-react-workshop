@@ -12,17 +12,18 @@
 //
 // module.exports = AppDispatcher
 
-import Dispatcher from 'flux/lib/Dispatcher'
-import assign from 'react/lib/Object.assign'
+import Dispatcher from 'flux'
+import assign from 'object-assign'
+import Constants from '../constants/constants'
 
-var AppDispatcher = assign(new Dispatcher(), {
-  handleViewAction: (action) => {
+class AppDispatcher extends Dispatcher {
+  handleViewAction(action) {
     console.log('in dispatcher, action is: ' + action)
     this.dispatch({
-      source: 'VIEW_ACTION',
+      source: Constants.VIEW_ACTION,
       action: action
     })
   }
-})
+}
 
 export default AppDispatcher
