@@ -12,11 +12,15 @@
 //
 // module.exports = AppDispatcher
 
-import Dispatcher from 'flux'
-import assign from 'object-assign'
+import { Dispatcher } from 'flux'
 import Constants from '../constants/constants'
 
-class AppDispatcher extends Dispatcher {
+class AppDispatcher extends Dispatcher{
+
+  constructor() {
+    super()
+  }
+
   handleViewAction(action) {
     console.log('in dispatcher, action is: ' + action)
     this.dispatch({

@@ -79,7 +79,7 @@ class MovieStore extends Store {
   constructor() {
     super()
   }
-
+  
   getState() {
     return appState
   }

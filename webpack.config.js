@@ -14,12 +14,20 @@ module.exports = {
     path: path.resolve(__dirname, 'public'),
     filename: "bundle.js"
   },
+  devtool: 'eval',
   module: {
+    preLoaders: [
+        {
+            test: /\.jsx$/,
+            exclude: /(node_modules|bower_components)/,
+            loader: 'source-map'
+        }
+    ],
     loaders: [
       {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
-        loaders: ['react-hot', 'babel-loader']
+        loaders: ['react-hot', 'babel?stage=0']
       }
     ]
   },
