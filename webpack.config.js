@@ -18,14 +18,14 @@ module.exports = {
   module: {
     preLoaders: [
         {
-            test: /\.jsx$/,
+            test: /\.(jsx|js)$/,
             exclude: /(node_modules|bower_components)/,
             loader: 'source-map'
         }
     ],
     loaders: [
       {
-        test: /\.jsx?$/,
+        test: /\.(jsx|js)?$/,
         exclude: /(node_modules|bower_components)/,
         loaders: ['react-hot', 'babel?stage=0']
       }

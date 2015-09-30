@@ -30,7 +30,7 @@
 // module.exports = Search
 
 import React from 'react'
-import Actions from '../actions/actions.jsx'
+import Actions from '../actions/actions'
 
 class Search extends React.Component {
   constructor() {

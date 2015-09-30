@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Actions from '../actions/actions.jsx'
+import Actions from '../actions/actions'
 
 class MoviePanel extends React.Component {
   constructor(props) {

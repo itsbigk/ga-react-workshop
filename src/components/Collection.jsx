@@ -13,7 +13,7 @@
 import React from 'react'
 
 import MoviePanel from './MoviePanel.jsx'
-import Store from '../stores/store.jsx'
+import Store from '../stores/store'
 
 class Collection extends React.Component {
   constructor() {

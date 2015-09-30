@@ -32,11 +32,11 @@ class MovieSearch extends React.Component {
 
   componentDidMount() {
     console.log(this._handleChange)
-    Store.addChangeListener(this._handleChange)
+    MovieStore.addChangeListener(this._handleChange)
   }
 
   componentWillUnmount() {
-    Store.removeChangeListener(this._handleChange)
+    MovieStore.removeChangeListener(this._handleChange)
   }
 
   _handleChange() {

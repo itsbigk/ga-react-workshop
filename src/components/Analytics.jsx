@@ -13,7 +13,7 @@
 import React from 'react'
 import Highcharts from 'react-highcharts'
 
-import Store from '../stores/store.jsx'
+import Store from '../stores/store'
 
 class Analytics extends React.Component {
   constructor() {

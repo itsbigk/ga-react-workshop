@@ -1,7 +1,7 @@
 {
   "name": "react-movies-app",
   "version": "0.0.1",
-  "description": "app using socketio node and react",
+  "description": "app using node, react, and flux",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -20,6 +20,8 @@
   "dependencies": {
     "express": "^4.13.3",
     "flux": "^2.1.1",
+    "keymirror": "^0.1.1",
+    "object-assign": "^4.0.1",
     "react": "^0.13.3",
     "react-highcharts": "^2.1.0",
     "react-router": "^0.13.3"
