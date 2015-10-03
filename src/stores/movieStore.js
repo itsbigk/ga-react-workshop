@@ -31,6 +31,8 @@ class MovieStore extends Store {
 
   constructor() {
     super()
+
+    this.register = this.register.bind(this)
   }
 
   getState() {
@@ -81,4 +83,7 @@ class MovieStore extends Store {
     return true // resolve the dispatcher so the next action can happen
   }
 }
+
+let _MovieStore = new MovieStore()
+
 export default MovieStore

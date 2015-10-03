@@ -9,7 +9,6 @@ app.use(express.static('./public'));
 app.listen(port);
 
 new WebpackDevServer(webpack(config), {
-  hot: true,
   historyApiFallback: true,
   proxy: {
     '*': 'http://localhost:3000'

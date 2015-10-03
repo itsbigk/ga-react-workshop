@@ -32,4 +32,6 @@ class Store extends EventEmitter {
   }
 }
 
-export default Store
+let _Store = new Store()
+
+export default _Store

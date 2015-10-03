@@ -2,7 +2,7 @@ import { Dispatcher } from 'flux'
 import assign from 'object-assign'
 import Constants from '../constants/constants'
 
-var AppDispatcher = assign(new Dispatcher(), {
+class AppDispatcher extends Dispatcher {
 
   handleServerAction(action) {
     console.log('in dispatcher for server action: ' + action)
@@ -14,7 +14,7 @@ var AppDispatcher = assign(new Dispatcher(), {
       source: Constants.SERVER_ACTION,
       action: action
     })
-  },
+  }
 
   handleViewAction(action) {
     console.log('in dispatcher, action is: ' + action)
@@ -27,6 +27,8 @@ var AppDispatcher = assign(new Dispatcher(), {
       action: action
     })
   }
-})
+}
 
-export default AppDispatcher
+let _AppDispatcher = new AppDispatcher()
+
+export default _AppDispatcher
