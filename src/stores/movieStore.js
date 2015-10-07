@@ -86,4 +86,4 @@ class MovieStore extends Store {
 
 let _MovieStore = new MovieStore()
 
-export default MovieStore
+export default _MovieStore
