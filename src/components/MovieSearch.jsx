@@ -8,9 +8,9 @@ class MovieSearch extends React.Component {
   constructor() {
     super()
 
-    console.log('listening for event')
-    this._handleChange = this._handleChange.bind(this)
     this.state = MovieStore.getState()
+    this._handleChange = this._handleChange.bind(this)
+    console.log('listening for event')
   }
 
   componentDidMount() {
